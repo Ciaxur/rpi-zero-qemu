@@ -1,7 +1,21 @@
 # Raspberry Pi Zero QEMU
 Small project for running Raspberry Pi Zero within qemu for development purposes.
 
-# Dependencies
+# Specification
+Raspberry Pi Zero specs are as follows. These are helpful in identifying the right kernel and
+dts:
+
+| Type      | Value                                   |
+| --------- | --------------------------------------- |
+| CPU       | 1-GHZ, Broadcom BCM2835 (ARM1176JZF-S)  |
+| RAM       | 512MB                                   |
+| Wireless  | 802.11n / Bluetooth 4.1 / LE            |
+| Ports     | Micro USB, mini-HDMI                    |
+| I/O       | 40 GPIO Pins | CSI Camera Connector     |
+
+
+# Usage
+## Dependencies
 I have included the device tree blobs(`DTB`) and kernel image for the Raspberry Pi Zero, which
 were obtained from the [Raspberry Pi Foundation GitHub Repository][2].
 
@@ -9,7 +23,7 @@ were obtained from the [Raspberry Pi Foundation GitHub Repository][2].
 - Kernel & DTB files from [Raspberry Pi Foundation GitHub Repository][2].
 - An image from your favorite linux distro. ([RPi OS][3], [Void Linux][4], etc...)
 
-# Usage
+## Run Qemu
 Simply run the [run-qemu.sh](./run-qemu.sh) script passing in the path to the image you'd like to boot.
 ```sh
 $ ./run-qemu.sh ./images/void-rpi-armv6l-20230628.img
